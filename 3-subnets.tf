@@ -37,6 +37,7 @@ resource "aws_subnet" "public-us-west-2a" {
     "kubernetes.io/cluster/demo" = "owned"
   }
 }
+
 # public subnet 02
 resource "aws_subnet" "public-us-west-2b" {
   vpc_id                  = aws_vpc.k8svpc.id
