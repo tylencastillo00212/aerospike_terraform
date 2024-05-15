@@ -27,22 +27,22 @@ resource "aws_route_table" "public" {
 
 
 # routing table association
-resource "aws_route_table_association" "private-us-west-2a" {
-  subnet_id      = aws_subnet.private-us-west-2a.id
+resource "aws_route_table_association" "private-region-a" {
+  subnet_id      = aws_subnet.private-region-a.id
   route_table_id = aws_route_table.private.id
 }
 
-resource "aws_route_table_association" "private-us-west-2b" {
-  subnet_id      = aws_subnet.private-us-west-2b.id
+resource "aws_route_table_association" "private-region-b" {
+  subnet_id      = aws_subnet.private-region-b.id
   route_table_id = aws_route_table.private.id
 }
 
-resource "aws_route_table_association" "public-us-west-2a" {
-  subnet_id      = aws_subnet.public-us-west-2a.id
+resource "aws_route_table_association" "public-region-a" {
+  subnet_id      = aws_subnet.public-region-a.id
   route_table_id = aws_route_table.public.id
 }
 
-resource "aws_route_table_association" "public-us-west-2b" {
-  subnet_id      = aws_subnet.public-us-west-2b.id
+resource "aws_route_table_association" "public-region-b" {
+  subnet_id      = aws_subnet.public-region-b.id
   route_table_id = aws_route_table.public.id
 }
