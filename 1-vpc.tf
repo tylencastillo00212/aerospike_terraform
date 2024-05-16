@@ -1,6 +1,6 @@
 # Create a VPC
 resource "aws_vpc" "k8svpc" {
-  cidr_block = "192.168.0.0/16"
+  cidr_block = var.vpc_cidr_block
   tags = {
     Name = "k8svpc"
   }

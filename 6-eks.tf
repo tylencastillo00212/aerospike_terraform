@@ -1,8 +1,8 @@
 # IAM role for eks
-resource "aws_iam_role" "demo" {
-  name = "eks-cluster-demo"
+resource "aws_iam_role" "aerospike_demo" {
+  name = "eks-cluster-aerospike_demo"
   tags = {
-    tag-key = "eks-cluster-demo"
+    tag-key = "eks-cluster-aerospike_demo"
   }
 
   assume_role_policy = <<POLICY
@@ -24,15 +24,15 @@ POLICY
 }
 
 # eks policy attachment
-resource "aws_iam_role_policy_attachment" "demo-AmazonEKSClusterPolicy" {
-  role       = aws_iam_role.demo.name
+resource "aws_iam_role_policy_attachment" "aerospike_demo-AmazonEKSClusterPolicy" {
+  role       = aws_iam_role.aerospike_demo.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
 }
 
 # bare minimum requirement of eks
-resource "aws_eks_cluster" "demo" {
-  name     = "demo"
-  role_arn = aws_iam_role.demo.arn
+resource "aws_eks_cluster" "aerospike_demo" {
+  name     = "aerospike_demo"
+  role_arn = aws_iam_role.aerospike_demo.arn
 
   vpc_config {
     subnet_ids = [
@@ -45,5 +45,5 @@ resource "aws_eks_cluster" "demo" {
 
   # Ensure that IAM Role permissions are created before and deleted after EKS Cluster handling.
   # Otherwise, EKS will not be able to properly delete EKS managed EC2 infrastructure such as Security Groups.
-  depends_on = [aws_iam_role_policy_attachment.demo-AmazonEKSClusterPolicy]
+  depends_on = [aws_iam_role_policy_attachment.aerospike_demo-AmazonEKSClusterPolicy]
 }
