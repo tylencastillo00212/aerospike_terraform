@@ -33,7 +33,7 @@ resource "aws_subnet" "public-region-a" {
 
   tags = {
     Name                                   = "public-region-a"
-    "kubernetes.io/role/elb"               = "1" #this instruct the kubernetes to create public load balancer in these subnets
+    "kubernetes.io/role/elb"               = "1"
     "kubernetes.io/cluster/aerospike_demo" = "owned"
   }
 }
@@ -47,7 +47,7 @@ resource "aws_subnet" "public-region-b" {
 
   tags = {
     Name                                   = "public-region-b"
-    "kubernetes.io/role/elb"               = "1" #this instruct the kubernetes to create public load balancer in these subnets
+    "kubernetes.io/role/elb"               = "1"
     "kubernetes.io/cluster/aerospike_demo" = "owned"
   }
 }

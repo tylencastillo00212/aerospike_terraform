@@ -23,3 +23,38 @@ variable "public_subnet_cidr_block" {
   type        = list(string)
   default     = ["192.168.64.0/19", "192.168.96.0/19"]
 }
+
+# AMI type
+variable "ami_type" {
+  description = "AMI type"
+  type        = string
+  default     = "AL2_x86_64"
+}
+
+# instance types
+variable "instance_types" {
+  description = "Instance types"
+  type        = list(string)
+  default     = ["t2.micro"]
+}
+
+# desired size
+variable "desired_size" {
+  description = "Desired size"
+  type        = number
+  default     = 3
+}
+
+# max size
+variable "max_size" {
+  description = "Max size"
+  type        = number
+  default     = 5
+}
+
+# min size
+variable "min_size" {
+  description = "Min size"
+  type        = number
+  default     = 3
+}
