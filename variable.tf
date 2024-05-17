@@ -35,7 +35,7 @@ variable "ami_type" {
 variable "instance_types" {
   description = "Instance types"
   type        = list(string)
-  default     = ["t2.micro"]
+  default     = ["t2.micro", "t2.small"]
 }
 
 # desired size
