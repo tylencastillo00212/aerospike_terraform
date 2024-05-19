@@ -1,4 +1,4 @@
-terraform apply -auto-apply
+terraform apply -auto-approve
 aws eks --region us-west-2 update-kubeconfig --name aerospike_demo
 kubectl get svc
 kubectl apply -f cluster-autoscaler.yaml

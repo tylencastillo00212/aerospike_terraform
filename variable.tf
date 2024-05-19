@@ -35,21 +35,21 @@ variable "ami_type" {
 variable "instance_types" {
   description = "Instance types"
   type        = list(string)
-  default     = ["t2.micro", "t2.small"]
+  default     = ["t2.medium"]
 }
 
 # desired size
 variable "desired_size" {
   description = "Desired size"
   type        = number
-  default     = 3
+  default     = 4
 }
 
 # max size
 variable "max_size" {
   description = "Max size"
   type        = number
-  default     = 5
+  default     = 10
 }
 
 # min size
