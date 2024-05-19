@@ -42,7 +42,7 @@ variable "instance_types" {
 variable "desired_size" {
   description = "Desired size"
   type        = number
-  default     = 4
+  default     = 1
 }
 
 # max size
@@ -56,5 +56,5 @@ variable "max_size" {
 variable "min_size" {
   description = "Min size"
   type        = number
-  default     = 3
+  default     = 1
 }
