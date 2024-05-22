@@ -42,7 +42,7 @@ variable "instance_types" {
 variable "desired_size" {
   description = "Desired size"
   type        = number
-  default     = 1
+  default     = 3
 }
 
 # max size
@@ -56,5 +56,18 @@ variable "max_size" {
 variable "min_size" {
   description = "Min size"
   type        = number
-  default     = 1
+  default     = 3
+}
+
+# master
+variable "host_os" {
+    type = string
+    default = "linux"
+}
+
+# instance type
+variable "master_instance_types" {
+  description = "Instance type"
+  type        = string
+  default     = "t2.medium"
 }
